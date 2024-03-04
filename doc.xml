@@ -1,0 +1,83 @@
+<recipeBoxes>
+    <orders>
+        <order idref="a1"/>
+        <order idref="a2"/>
+    </orders>
+    <order id="a1">
+        <menus>
+            <menu>
+                <recipe id="2"/>
+            </menu>
+        </menus>
+        <customer idref="c3"/>
+        <delivryman idref="2"/>
+    </order>
+    <order id="a2">
+    </order>
+    <customers>
+        <customer id="c1">
+            <firstname>Luck</firstname>
+            <lastname>Skywalker</lastname>
+            <mail>luck.skywalker@galaxy.com</mail>
+        </customer>
+        <customer id="c2">
+            <firstname>Obiwan</firstname>
+            <lastname>Kenobi</lastname>
+            <mail>obiwan.kenobi@galaxy.com</mail>
+        </customer>
+       <customer id="c3">
+           <firstname>Sheldon</firstname>
+           <lastname>Cooper</lastname>
+           <mail>sheldon.cooper@scientist.com</mail>
+       </customer>
+    </customers>
+    <deliverymen>
+        <deliveryman id="d1">
+            <firstname>luc</firstname>
+            <lastname>dupont</lastname>
+            <mail>luc.dupont@pont.fr</mail>
+            <score>4/5</score>
+        </deliveryman>
+        <deliveryman id="d2">
+            <firstname>Alexandre</firstname>
+            <lastname>leroy</lastname>
+            <mail>alexandre.leroy@transport.fr</mail>
+            <score>5/5</score>
+        </deliveryman>
+        <deliveryman id="d3">
+            <firstname>Antoine</firstname>
+            <lastname>Rousseau</lastname>
+            <mail>antoine.rousseau@transport.fr</mail>
+            <score>3.5/5</score>
+        </deliveryman>
+    </deliverymen>
+    <comments>
+        <comment>
+
+            <customer idref="c2"/>
+            <description>
+                Une très bonne recette, je vous recommande ceci.
+                De plus le livreur a été souriant et sympathique lors de la réception de la commande.
+            </description>
+            <note>5/5</note>
+        </comment>
+        <comment>
+            <customer idref="c1"/>
+            <description>
+
+            </description>
+            <note>4/5</note>
+        </comment>
+    </comments>
+    <ingredient>
+        <name>
+
+        </name>
+        <id>
+
+        </id>
+    </ingredient>
+    <recipe>
+
+    </recipe>
+</recipeBoxes>
