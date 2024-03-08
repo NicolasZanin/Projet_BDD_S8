@@ -6,8 +6,8 @@
                     <recipe id="2"/>
                 </menu>
             </menus>
-            <customer idref="c3"/>
-            <delivryman idref="d2"/>
+            <customer-ref idref="c3"/>
+            <delivryman-ref idref="d2"/>
         </order>
         <order id="a2"/>
     </orders>
@@ -50,8 +50,8 @@
     </deliverymen>
     <comments>
         <comment>
-            <recipe idref="r1"/>
-            <customer idref="c2"/>
+            <recipe-ref idref="r1"/>
+            <customer-ref idref="c2"/>
             <description>
                 Une très bonne recette, je vous recommande ceci.
                 De plus le livreur a été souriant et sympathique lors de la réception de la commande.
@@ -59,19 +59,18 @@
             <note>5/5</note>
         </comment>
         <comment>
-            <customer idref="c1"/>
+            <customer-ref idref="c1"/>
             <description>
                 Was verry nice although didn't add any seasoning to the meal only salt and a hint of pepper as im white
             </description>
             <note>4/5</note>
         </comment>
         <comment>
-            <customer idref="c3">
-                <description>
-                    So horrible calling Rice for healthy!
-                </description>
-                <note>1/5</note>
-            </customer>
+            <customer-ref idref="c3" />
+            <description>
+                So horrible calling Rice for healthy!
+            </description>
+            <note>1/5</note>
         </comment>
     </comments>
     <recipes>
@@ -79,23 +78,23 @@
             <name>Slow cooker meatballs</name>
             <ingredients>
                 <ingredient>
-                    <aliment>Onion</aliment>
+                    <food>Onion</food>
                     <quantity>1</quantity>
                 </ingredient>
                 <ingredient>
-                    <aliment>Carrot</aliment>
+                    <food>Carrot</food>
                     <quantity>2</quantity>
                 </ingredient>
                 <ingredient>
-                    <aliment>Celery sticks</aliment>
+                    <food>Celery sticks</food>
                     <quantity>2</quantity>
                 </ingredient>
                 <ingredient>
-                    <aliment>Tomato sauce</aliment>
+                    <food>Tomato sauce</food>
                     <quantity>500 g</quantity>
                 </ingredient>
                 <ingredient>
-                    <aliment>Chicken</aliment>
+                    <food>Chicken</food>
                     <quantity>400 g</quantity>
                 </ingredient>
             </ingredients>
@@ -105,28 +104,32 @@
                 <prep>1 hr</prep>
                 <cook>5 hr</cook>
             </time>
-            <instructions>
-                <instruction>Health</instruction>
-                <instruction>Freezable</instruction>
-            </instructions>
+            <aspects>
+                <aspect-ref idref="a1"/>
+                <aspect-ref idref="a2"/>
+            </aspects>
+            <directions>
+                <direction>Heat the slow cooker if necessary. Heat the oil in a non-stick frying pan and add the onion, carrots, celery and garlic and fry gently for a minute. Pour in the passata, add the parsley and stir, then transfer the lot to the slow cooker.</direction>
+                <direction>To make the meatballs, tip the mince into a large bowl. Add the oats, paprika, garlic and plenty of black pepper, and mix everything together with your hands. Divide the mixture into 20 lumps about the size of a walnut and roll each piece into a meatball. Spray or run a non-stick pan with a little oil and gently cook the meatballs until they start to brown. Add them to the tomato base and cook on Low for 5 hours. Serve over rice or pasta if you like, or with a green salad.</direction>
+            </directions>
         </recipe>
         <recipe id="r2">
             <name>Slow cooker mac ’n’ cheese</name>
             <ingredients>
                 <ingredient>
-                    <aliment>Macaroni pasta</aliment>
+                    <food>Macaroni pasta</food>
                     <quantity>350 g</quantity>
                 </ingredient>
                 <ingredient>
-                    <aliment>Milk</aliment>
+                    <food>Milk</food>
                     <quantity>600 ml</quantity>
                 </ingredient>
                 <ingredient>
-                    <aliment>Butter</aliment>
+                    <food>Butter</food>
                     <quantity>50 g</quantity>
                 </ingredient>
                 <ingredient>
-                    <aliment>Cheddar</aliment>
+                    <food>Cheddar</food>
                     <quantity>50 g</quantity>
                 </ingredient>
             </ingredients>
@@ -136,27 +139,31 @@
                 <prep>15 mins</prep>
                 <cook>1 hr 30 mins</cook>
             </time>
-            <instructions>
-                <instruction>Vegeterian</instruction>
-            </instructions>
+            <aspects>
+                <aspect-ref idref="a3"/>
+            </aspects>
+            <directions>
+                <direction>Pour boiling water over the pasta and drain, then put everything in a slow cooker and stir well. Season, cover and cook on low for 1 hr. Stir again, put the lid back on and cook for another 30 mins until the pasta is cooked and the sauce has reduced enough to coat the macaroni.</direction>
+                <direction>Leave the lid off and reduce for the last 10 mins if you need to, or add a splash more milk – this will depend on the size of your slow cooker and the brand. Serve with extra cheese.</direction>
+            </directions>
         </recipe>
         <recipe id="r3">
             <name>Slow cooker vegetable lasagne</name>
             <ingredients>
                 <ingredient>
-                    <aliment>onions</aliment>
+                    <food>onions</food>
                     <quantity>2</quantity>
                 </ingredient>
                 <ingredient>
-                    <aliment>large courgettes</aliment>
+                    <food>large courgettes</food>
                     <quantity>2</quantity>
                 </ingredient>
                 <ingredient>
-                    <aliment>tomato</aliment>
+                    <food>tomato</food>
                     <quantity>400 g</quantity>
                 </ingredient>
                 <ingredient>
-                    <aliment>vegetable buffalo mozzarella</aliment>
+                    <food>vegetable buffalo mozzarella</food>
                     <quantity>125 g</quantity>
                 </ingredient>
             </ingredients>
@@ -166,11 +173,25 @@
                 <prep>30 mins</prep>
                 <cook>2hr 30mins</cook>
             </time>
-            <instructions>
-                <instruction>Healthy</instruction>
-                <instruction>Vegetarian</instruction>
-            </instructions>
+            <aspects>
+                <aspect-ref idref="a1"/>
+                <aspect-ref idref="a3"/>
+            </aspects>
+            <directions>
+                <direction>Heat 1 tbsp rapeseed oil in a large non-stick pan and fry 2 sliced onions and 2 chopped large garlic cloves for 5 mins, stirring frequently until softened</direction>
+                <direction>Tip in 2 diced large courgettes, 1 red and 1 yellow pepper, both roughly sliced, and 400g chopped tomatoes with 2 tbsp tomato purée, 2 tsp vegetable bouillon and 15g chopped basil.</direction>
+                <direction>Stir well, cover and cook for 5 mins. Don't be tempted to add more liquid as plenty of moisture will come from the vegetables once they start cooking.</direction>
+                <direction>Slice 1 large aubergine. Lay half the slices of aubergine in the base of the slow cooker and top with 3 sheets of lasagne.</direction>
+                <direction>Add a third of the ratatouille mixture, then the remaining aubergine slices, 3 more lasagne sheets, then the remaining ratatouille mixture.</direction>
+                <direction>Cover and cook on High for 2½ - 3 hours until the pasta and vegetables are tender. Turn off the machine.</direction>
+                <direction>Scatter 125g vegetarian buffalo mozzarella over the vegetables then cover and leave for 10 mins to settle and melt the cheese.</direction>
+                <direction>Scatter with extra basil and serve with a handful of rocket.</direction>
+            </directions>
         </recipe>
-
     </recipes>
+    <aspects>
+        <aspect id="a1">Health</aspect>
+        <aspect id="a2">Freezable</aspect>
+        <aspect id="a3">Vegetarian</aspect>
+    </aspects>
 </recipeBoxes>
