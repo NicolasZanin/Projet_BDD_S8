@@ -39,7 +39,7 @@
             <xs:element name="name" type="xs:string"/>
             <xs:element name="recipe" type="recipeType"/>
             <xs:element name="price" type="xs:float"/>
-            <xs:element name="deliveryman" type="de"
+            <xs:element name="deliveryman" type="deliverymanType"/>
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID"/>
     </xs:complexType>
