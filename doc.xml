@@ -76,25 +76,26 @@
     <recipes>
         <recipe id="r1">
             <name>Slow cooker meatballs</name>
+            <description>Try these slow cooker meatballs for a tasty family meal. Turkey mince makes lighter meatballs which kids love. They also freeze well so you can batch cook</description>
             <ingredients>
                 <ingredient>
-                    <food>Onion</food>
+                    <aliment-ref idref="al1"/>
                     <quantity>1</quantity>
                 </ingredient>
                 <ingredient>
-                    <food>Carrot</food>
+                    <aliment-ref idref="al2"/>
                     <quantity>2</quantity>
                 </ingredient>
                 <ingredient>
-                    <food>Celery sticks</food>
+                    <food idref="al3"/>
                     <quantity>2</quantity>
                 </ingredient>
                 <ingredient>
-                    <food>Tomato sauce</food>
+                    <aliment-ref idref="al4"/>
                     <quantity>500 g</quantity>
                 </ingredient>
                 <ingredient>
-                    <food>Chicken</food>
+                    <aliment-ref idref="al5"/>
                     <quantity>400 g</quantity>
                 </ingredient>
             </ingredients>
@@ -104,10 +105,10 @@
                 <prep>1 hr</prep>
                 <cook>5 hr</cook>
             </time>
-            <aspects>
+            <aspects-ref>
                 <aspect-ref idref="a1"/>
                 <aspect-ref idref="a2"/>
-            </aspects>
+            </aspects-ref>
             <directions>
                 <direction>Heat the slow cooker if necessary. Heat the oil in a non-stick frying pan and add the onion, carrots, celery and garlic and fry gently for a minute. Pour in the passata, add the parsley and stir, then transfer the lot to the slow cooker.</direction>
                 <direction>To make the meatballs, tip the mince into a large bowl. Add the oats, paprika, garlic and plenty of black pepper, and mix everything together with your hands. Divide the mixture into 20 lumps about the size of a walnut and roll each piece into a meatball. Spray or run a non-stick pan with a little oil and gently cook the meatballs until they start to brown. Add them to the tomato base and cook on Low for 5 hours. Serve over rice or pasta if you like, or with a green salad.</direction>
@@ -115,21 +116,22 @@
         </recipe>
         <recipe id="r2">
             <name>Slow cooker mac ’n’ cheese</name>
+            <description>There’s no need to make a white sauce with this easy recipe. Just tip the ingredients into your slow cooker for a velvety smooth veggie pasta dish</description>
             <ingredients>
                 <ingredient>
-                    <food>Macaroni pasta</food>
+                    <aliment-ref idref="al6"/>
                     <quantity>350 g</quantity>
                 </ingredient>
                 <ingredient>
-                    <food>Milk</food>
+                    <aliment-ref idref="al7"/>
                     <quantity>600 ml</quantity>
                 </ingredient>
                 <ingredient>
-                    <food>Butter</food>
+                    <aliment-ref idref="al8"/>
                     <quantity>50 g</quantity>
                 </ingredient>
                 <ingredient>
-                    <food>Cheddar</food>
+                    <aliment-ref idref="al9"/>
                     <quantity>50 g</quantity>
                 </ingredient>
             </ingredients>
@@ -139,9 +141,9 @@
                 <prep>15 mins</prep>
                 <cook>1 hr 30 mins</cook>
             </time>
-            <aspects>
+            <aspects-ref>
                 <aspect-ref idref="a3"/>
-            </aspects>
+            </aspects-ref>
             <directions>
                 <direction>Pour boiling water over the pasta and drain, then put everything in a slow cooker and stir well. Season, cover and cook on low for 1 hr. Stir again, put the lid back on and cook for another 30 mins until the pasta is cooked and the sauce has reduced enough to coat the macaroni.</direction>
                 <direction>Leave the lid off and reduce for the last 10 mins if you need to, or add a splash more milk – this will depend on the size of your slow cooker and the brand. Serve with extra cheese.</direction>
@@ -149,21 +151,22 @@
         </recipe>
         <recipe id="r3">
             <name>Slow cooker vegetable lasagne</name>
+            <description>Make this low-calorie veggie lasagne as a lighter alternative to the traditional bake. It's layered with pasta, ratatouille and sliced aubergine, and packs in all of your five-a-day</description>
             <ingredients>
                 <ingredient>
-                    <food>onions</food>
+                    <aliment-ref idref="al1"/>
                     <quantity>2</quantity>
                 </ingredient>
                 <ingredient>
-                    <food>large courgettes</food>
+                    <aliment-ref idref="al10"/>
                     <quantity>2</quantity>
                 </ingredient>
                 <ingredient>
-                    <food>tomato</food>
+                    <aliment-ref idref="al11"/>
                     <quantity>400 g</quantity>
                 </ingredient>
                 <ingredient>
-                    <food>vegetable buffalo mozzarella</food>
+                    <aliment-ref idref="al12"/>
                     <quantity>125 g</quantity>
                 </ingredient>
             </ingredients>
@@ -173,10 +176,10 @@
                 <prep>30 mins</prep>
                 <cook>2hr 30mins</cook>
             </time>
-            <aspects>
+            <aspects-ref>
                 <aspect-ref idref="a1"/>
                 <aspect-ref idref="a3"/>
-            </aspects>
+            </aspects-ref>
             <directions>
                 <direction>Heat 1 tbsp rapeseed oil in a large non-stick pan and fry 2 sliced onions and 2 chopped large garlic cloves for 5 mins, stirring frequently until softened</direction>
                 <direction>Tip in 2 diced large courgettes, 1 red and 1 yellow pepper, both roughly sliced, and 400g chopped tomatoes with 2 tbsp tomato purée, 2 tsp vegetable bouillon and 15g chopped basil.</direction>
@@ -194,4 +197,54 @@
         <aspect id="a2">Freezable</aspect>
         <aspect id="a3">Vegetarian</aspect>
     </aspects>
+    <foods>
+        <aliment id="al1">
+            <name>Onion</name>
+            <imageLink>link</imageLink>
+        </aliment>
+        <aliment id="al2">
+            <name>Carrot</name>
+            <imageLink>link</imageLink>
+        </aliment>
+        <aliment id="al3">
+            <name>Celery sticks</name>
+            <imageLink>link</imageLink>
+        </aliment>
+        <aliment id="al4">
+            <name>Tomato sauce</name>
+            <imageLink>link</imageLink>
+        </aliment>
+        <aliment id="al5">
+            <name>Chicken</name>
+            <imageLink>link</imageLink>
+        </aliment>
+        <aliment id="al6">
+            <name>Macaroni pasta</name>
+            <imageLink>link</imageLink>
+        </aliment>
+        <aliment id="al7">
+            <name>Milk</name>
+            <imageLink>link</imageLink>
+        </aliment>
+        <aliment id="al8">
+            <name>Butter</name>
+            <imageLink>link</imageLink>
+        </aliment>
+        <aliment id="al9">
+            <name>Cheddar</name>
+            <imageLink>link</imageLink>
+        </aliment>
+        <aliment id="al10">
+            <name>large courgettes</name>
+            <imageLink>link</imageLink>
+        </aliment>
+        <aliment id="al11">
+            <name>tomato</name>
+            <imageLink>link</imageLink>
+        </aliment>
+        <aliment id="al12">
+            <name>vegetable buffalo mozzarella</name>
+            <imageLink>link</imageLink>
+        </aliment>
+    </foods>
 </recipeBoxes>
