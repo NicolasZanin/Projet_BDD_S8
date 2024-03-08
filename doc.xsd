@@ -2,6 +2,7 @@
     <xs:complexType name="alimentType">
         <xs:sequence>
             <xs:element name="name" type="xs:string"/>
+            <xs:element name="imageLink" type="xs:string"/>
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID"/>
     </xs:complexType>
@@ -15,18 +16,28 @@
 
     <xs:complexType name="recipeType">
         <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="ingredients">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ingredient" type="ingredientType" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="difficulty" type="xs:string"/>
+            <xs:element name="serves" type="xs:string"/>
+            <xs:element name="time">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="prep" type="xs:string"/>
+                        <xs:element name="cook" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="instructions">
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="instruction" type="xs:string" maxOccurs="unbounded"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="ingredients">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="instruction" type="xs:string" maxOccurs="unbounded"/>
-                        <xs:element name="ingredient" type="ingredientType" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -36,17 +47,12 @@
 
     <xs:complexType name="menuType">
         <xs:sequence>
-            <xs:element name="name" type="xs:string"/>
-            <xs:element name="recipe" type="recipeType"/>
-            <xs:element name="price" type="xs:float"/>
-            <xs:element name="deliveryman" type="deliverymanType"/>
-        </xs:sequence>
-        <xs:attribute name="id" type="xs:ID"/>
-    </xs:complexType>
-
-    <xs:complexType name="orderType">
-        <xs:sequence>
-            <xs:element name="menu" type="menuType" maxOccurs="unbounded"/>
+            <xs:element name="recipe-ref">
+                <xs:complexType>
+                    <xs:attribute name="idref" type="xs:IDREF"/>
+                </xs:complexType>
+            </xs:element>
+            <!--xs:element name="price" type="xs:float"/-->
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID"/>
     </xs:complexType>
@@ -61,19 +67,96 @@
         <xs:attribute name="id" type="xs:ID"/>
     </xs:complexType>
 
-    <xs:element name="orders">
+    <xs:complexType name="customerType">
+        <xs:sequence>
+            <xs:element name="firstname" type="xs:string"/>
+            <xs:element name="lastname" type="xs:string"/>
+            <xs:element name="mail" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID"/>
+    </xs:complexType>
+
+    <xs:complexType name="orderType">
+        <xs:sequence>
+            <xs:element name="menus" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="menu" type="menuType" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="customer-ref">
+                <xs:complexType>
+                    <xs:attribute name="idref" type="xs:IDREF"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deliveryman-ref">
+                <xs:complexType>
+                    <xs:attribute name="idref" type="xs:IDREF"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID"/>
+    </xs:complexType>
+
+    <xs:complexType name="commentType">
+        <xs:sequence>
+            <xs:element name="recipe-ref">
+                <xs:complexType>
+                    <xs:attribute name="idref" type="xs:IDREF"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="customer-ref">
+                <xs:complexType>
+                    <xs:attribute name="idref" type="xs:IDREF"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="note" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID"/>
+    </xs:complexType>
+
+    <xs:element name="recipeBoxes">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="order" type="orderType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="orders">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="order" type="orderType" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="customers">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="customer" type="customerType" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="deliverymen">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="deliveryman" type="deliverymanType" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="comments">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="comment" type="commentType" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="recipes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="recipe" type="recipeType" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="deliverymen">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="deliveryman" type="deliverymanType" minOccurs="0" maxOccurs="unbounded"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
 </xs:schema>
