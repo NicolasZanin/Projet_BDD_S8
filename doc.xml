@@ -1,19 +1,16 @@
 <recipeBoxes>
     <orders>
-        <order idref="a1"/>
-        <order idref="a2"/>
+        <order id="a1">
+            <menus>
+                <menu>
+                    <recipe id="2"/>
+                </menu>
+            </menus>
+            <customer idref="c3"/>
+            <delivryman idref="d2"/>
+        </order>
+        <order id="a2"/>
     </orders>
-    <order id="a1">
-        <menus>
-            <menu>
-                <recipe id="2"/>
-            </menu>
-        </menus>
-        <customer idref="c3"/>
-        <delivryman idref="2"/>
-    </order>
-    <order id="a2">
-    </order>
     <customers>
         <customer id="c1">
             <firstname>Luck</firstname>
@@ -36,24 +33,24 @@
             <firstname>luc</firstname>
             <lastname>dupont</lastname>
             <mail>luc.dupont@pont.fr</mail>
-            <score>4/5</score>
+            <score>4</score>
         </deliveryman>
         <deliveryman id="d2">
             <firstname>Alexandre</firstname>
             <lastname>leroy</lastname>
             <mail>alexandre.leroy@transport.fr</mail>
-            <score>5/5</score>
+            <score>5</score>
         </deliveryman>
         <deliveryman id="d3">
             <firstname>Antoine</firstname>
             <lastname>Rousseau</lastname>
             <mail>antoine.rousseau@transport.fr</mail>
-            <score>3.5/5</score>
+            <score>3.5</score>
         </deliveryman>
     </deliverymen>
     <comments>
         <comment>
-
+            <recipe idref="r1"/>
             <customer idref="c2"/>
             <description>
                 Une très bonne recette, je vous recommande ceci.
@@ -64,20 +61,116 @@
         <comment>
             <customer idref="c1"/>
             <description>
-
+                Was verry nice although didn't add any seasoning to the meal only salt and a hint of pepper as im white
             </description>
             <note>4/5</note>
         </comment>
+        <comment>
+            <customer idref="c3">
+                <description>
+                    So horrible calling Rice for healthy!
+                </description>
+                <note>1/5</note>
+            </customer>
+        </comment>
     </comments>
-    <ingredient>
-        <name>
+    <recipes>
+        <recipe id="r1">
+            <name>Slow cooker meatballs</name>
+            <ingredients>
+                <ingredient>
+                    <aliment>Onion</aliment>
+                    <quantity>1</quantity>
+                </ingredient>
+                <ingredient>
+                    <aliment>Carrot</aliment>
+                    <quantity>2</quantity>
+                </ingredient>
+                <ingredient>
+                    <aliment>Celery sticks</aliment>
+                    <quantity>2</quantity>
+                </ingredient>
+                <ingredient>
+                    <aliment>Tomato sauce</aliment>
+                    <quantity>500 g</quantity>
+                </ingredient>
+                <ingredient>
+                    <aliment>Chicken</aliment>
+                    <quantity>400 g</quantity>
+                </ingredient>
+            </ingredients>
+            <difficulty>Easy</difficulty>
+            <serves>5</serves>
+            <time>
+                <prep>1 hr</prep>
+                <cook>5 hr</cook>
+            </time>
+            <instructions>
+                <instruction>Health</instruction>
+                <instruction>Freezable</instruction>
+            </instructions>
+        </recipe>
+        <recipe id="r2">
+            <name>Slow cooker mac ’n’ cheese</name>
+            <ingredients>
+                <ingredient>
+                    <aliment>Macaroni pasta</aliment>
+                    <quantity>350 g</quantity>
+                </ingredient>
+                <ingredient>
+                    <aliment>Milk</aliment>
+                    <quantity>600 ml</quantity>
+                </ingredient>
+                <ingredient>
+                    <aliment>Butter</aliment>
+                    <quantity>50 g</quantity>
+                </ingredient>
+                <ingredient>
+                    <aliment>Cheddar</aliment>
+                    <quantity>50 g</quantity>
+                </ingredient>
+            </ingredients>
+            <difficulty>Easy</difficulty>
+            <serves>4</serves>
+            <time>
+                <prep>15 mins</prep>
+                <cook>1 hr 30 mins</cook>
+            </time>
+            <instructions>
+                <instruction>Vegeterian</instruction>
+            </instructions>
+        </recipe>
+        <recipe id="r3">
+            <name>Slow cooker vegetable lasagne</name>
+            <ingredients>
+                <ingredient>
+                    <aliment>onions</aliment>
+                    <quantity>2</quantity>
+                </ingredient>
+                <ingredient>
+                    <aliment>large courgettes</aliment>
+                    <quantity>2</quantity>
+                </ingredient>
+                <ingredient>
+                    <aliment>tomato</aliment>
+                    <quantity>400 g</quantity>
+                </ingredient>
+                <ingredient>
+                    <aliment>vegetable buffalo mozzarella</aliment>
+                    <quantity>125 g</quantity>
+                </ingredient>
+            </ingredients>
+            <difficulty>Easy</difficulty>
+            <serves>4</serves>
+            <time>
+                <prep>30 mins</prep>
+                <cook>2hr 30mins</cook>
+            </time>
+            <instructions>
+                <instruction>Healthy</instruction>
+                <instruction>Vegetarian</instruction>
+            </instructions>
+        </recipe>
 
-        </name>
-        <id>
-
-        </id>
-    </ingredient>
-    <recipe>
-
-    </recipe>
+    </recipes>
 </recipeBoxes>
