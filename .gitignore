@@ -1,5 +1,7 @@
 ### IntelliJ IDEA ###
 .idea
+out/
+target/
 
 ### VS Code ###
 .vscode/

@@ -3,7 +3,7 @@
         <order id="a1">
             <menus>
                 <menu>
-                    <recipe id="2"/>
+                    <recipe-ref idref="r2"/>
                 </menu>
             </menus>
             <customer-ref idref="c3"/>
@@ -59,6 +59,7 @@
             <note>5/5</note>
         </comment>
         <comment>
+            <recipe-ref idref="r2"/>
             <customer-ref idref="c1"/>
             <description>
                 Was verry nice although didn't add any seasoning to the meal only salt and a hint of pepper as im white
@@ -66,11 +67,21 @@
             <note>4/5</note>
         </comment>
         <comment>
+            <recipe-ref idref="r3"/>
             <customer-ref idref="c3" />
             <description>
                 So horrible calling Rice for healthy!
             </description>
             <note>1/5</note>
+        </comment>
+        <comment>
+            <recipe-ref idref="r1"/>
+            <customer-ref idref="c3"/>
+            <description>
+                Une très bonne recette, je vous recommande ceci.
+                De plus le livreur a été souriant et sympathique lors de la réception de la commande.
+            </description>
+            <note>5/5</note>
         </comment>
     </comments>
     <recipes>
