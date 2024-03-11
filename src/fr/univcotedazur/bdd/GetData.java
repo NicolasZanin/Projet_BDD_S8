@@ -4,6 +4,7 @@ import org.dom4j.Element;
 import org.dom4j.Node;
 import org.dom4j.XPath;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,7 +32,7 @@ public class GetData {
         return map;
     }
 
-    public static Map<String, Integer> getNumberOfCustomerCommentsDependingRecipe(Element root) {
+    public static Map<String, Integer> getNumberOfCustomerCommentsDependingRecipeId(Element root) {
         List<Node> comments = root.selectNodes("//comment");
         Map<String, Integer> map = new HashMap<>();
 
@@ -45,6 +46,11 @@ public class GetData {
                 map.put(idRef, 1);
         }
 
+        return map;
+    }
+
+    public static Map<String, Integer> getNumberOfCustomerCommentsDependingRecipe(Element root) {
+        Map<String, Integer> map = getNumberOfCustomerCommentsDependingRecipeId(root);
         Map<String, Integer> map2 = new HashMap<>();
         List<Node> recipes = root.selectNodes("//recipe");
 
@@ -56,5 +62,47 @@ public class GetData {
         }
 
         return map2;
+    }
+
+    public static double getAverageCustomerDependingRecipe(Element root) {
+        Map<String, Integer> map = getNumberOfCustomerCommentsDependingRecipeId(root);
+
+        if (!map.isEmpty())
+            return (double) map.values().stream().reduce(Integer::sum).get() / map.size();
+
+        return 0;
+    }
+
+    public static double getAverageScoreComment(Element root) {
+        List<Node> grades = root.selectNodes("//comments/comment/note");
+        double average = 0.0;
+
+        for (Node grade : grades) {
+            average += Double.parseDouble(grade.getText());
+        }
+
+        if (grades.isEmpty())
+            return 0;
+
+        return average / grades.size();
+    }
+
+    public static List<String> getCustomers(Element root) {
+        List<Node> customers = root.selectNodes("//customers/customer");
+        List<String> finalListCustomer = new ArrayList<>();
+
+        for (Node customer : customers) {
+            String firstname = customer.selectSingleNode("firstname").getText();
+            String lastname = customer.selectSingleNode("lastname").getText();
+            String mail = customer.selectSingleNode("mail").getText();
+
+            finalListCustomer.add(String.format("Name : %s%nLastname : %s%nMail : %s%n", firstname, lastname, mail));
+        }
+
+        return finalListCustomer;
+    }
+
+    public static List<String> getAliments(Element root) {
+        return root.selectNodes("//foods/aliment/name").stream().map(Node::getText).toList();
     }
 }

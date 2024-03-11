@@ -1,5 +1,6 @@
 package fr.univcotedazur.bdd;
 
+import java.util.List;
 import java.util.Map;
 
 public class Output {
@@ -11,6 +12,10 @@ public class Output {
         System.out.println("Nombre customer dans le xml : " + numberOfCustomer);
     }
 
+    public static void printNumberAverage(String title, Double numberOfRecipe) {
+        System.out.println(title + numberOfRecipe);
+    }
+
     public static void printMap(String beginText, Map<String, Integer> ingredientsRecipes) {
         StringBuilder builder = new StringBuilder(beginText);
 
@@ -19,5 +24,11 @@ public class Output {
         }
 
         System.out.println(builder);
+    }
+
+
+    public static void printList(String beginText, List<String> list) {
+        System.out.println(beginText);
+        list.forEach(System.out::println);
     }
 }
