@@ -2,22 +2,27 @@
     <orders>
         <order id="o1">
             <menus>
-                <menu>
-                    <recipe-ref idref="r2"/>
-                </menu>
+                <menu> <recipe-ref idref="r2"/> </menu>
             </menus>
             <customer-ref idref="c3"/>
             <deliveryman-ref idref="d2"/>
         </order>
         <order id="o2">
-            <menubox-ref id="mb1"/>
+            <menus>
+                <menu> <recipe-ref idref="r1"/> </menu>
+            </menus>
+            <menuboxes-ref>
+                <menubox-ref idref="mb1"/>
+            </menuboxes-ref>
             <customer-ref idref="c1"/>
-            <delivryman idref="d1"/>
+            <deliveryman-ref idref="d1"/>
         </order>
         <order id="o3">
-            <menubox-ref id="mb3"/>
+            <menuboxes-ref>
+                <menubox-ref idref="mb3"/>
+            </menuboxes-ref>
             <customer-ref idref="c3"/>
-            <delivryman idref="d1"/>
+            <deliveryman-ref idref="d1"/>
         </order>
         <order id="o4">
             <menus>
@@ -26,7 +31,7 @@
                     <menu> <recipe-ref idref="r3"/> </menu>
             </menus>
             <customer-ref idref="c2"/>
-            <delivryman idref="d3"/>
+            <deliveryman-ref idref="d3"/>
         </order>
     </orders>
     <menuboxes>
@@ -146,25 +151,28 @@
         <recipe id="r1">
             <name>Slow cooker meatballs</name>
             <description>Try these slow cooker meatballs for a tasty family meal. Turkey mince makes lighter meatballs which kids love. They also freeze well so you can batch cook</description>
-            <categorical-ref idref="c3"/>
+            <category-ref idref="c3"/>
             <price>12</price>
             <ingredients>
                 <ingredient>
                     <aliment-ref idref="al1"/>
                     <quantity>
                         <value>1</value>
+                        <unit>pièce(s)</unit>
                     </quantity>
                 </ingredient>
                 <ingredient>
                     <aliment-ref idref="al2"/>
                     <quantity>
                         <value>2</value>
+                        <unit>pièce(s)</unit>
                     </quantity>
                 </ingredient>
                 <ingredient>
                     <aliment-ref idref="al3"/>
                     <quantity>
                         <value>2</value>
+                        <unit>pièce(s)</unit>
                     </quantity>
                 </ingredient>
                 <ingredient>
@@ -198,7 +206,7 @@
             </directions>
             <nutritionalValue>
                 <energieKJ>2070</energieKJ>
-                <eergieKcal>536</eergieKcal>
+                <energieKcal>536</energieKcal>
                 <fat>20</fat>
                 <acideAcidulees>32</acideAcidulees>
                 <glucides>12</glucides>
@@ -210,7 +218,7 @@
         <recipe id="r2">
             <name>Slow cooker mac ’n’ cheese</name>
             <description>There’s no need to make a white sauce with this easy recipe. Just tip the ingredients into your slow cooker for a velvety smooth veggie pasta dish</description>
-            <categorical-ref idref="c1"/>
+            <category-ref idref="c1"/>
             <price>10</price>
             <ingredients>
                 <ingredient>
@@ -257,7 +265,7 @@
             </directions>
             <nutritionalValue>
                 <energieKJ>3080</energieKJ>
-                <eergieKcal>759</eergieKcal>
+                <energieKcal>759</energieKcal>
                 <fat>34</fat>
                 <acideAcidulees>22</acideAcidulees>
                 <glucides>50</glucides>
@@ -269,19 +277,21 @@
         <recipe id="r3">
             <name>Slow cooker vegetable lasagne</name>
             <description>Make this low-calorie veggie lasagne as a lighter alternative to the traditional bake. It's layered with pasta, ratatouille and sliced aubergine, and packs in all of your five-a-day</description>
-            <categorical-ref idref="c3"/>
+            <category-ref idref="c3"/>
             <price>14</price>
             <ingredients>
                 <ingredient>
                     <aliment-ref idref="al1"/>
                     <quantity>
                         <value>2</value>
+                        <unit>pièce(s)</unit>
                     </quantity>
                 </ingredient>
                 <ingredient>
                     <aliment-ref idref="al10"/>
                     <quantity>
                         <value>2</value>
+                        <unit>pièce(s)</unit>
                     </quantity>
                 </ingredient>
                 <ingredient>
@@ -321,7 +331,7 @@
             </directions>
             <nutritionalValue>
                 <energieKJ>3840</energieKJ>
-                <eergieKcal>919</eergieKcal>
+                <energieKcal>919</energieKcal>
                 <fat>49.2</fat>
                 <acideAcidulees>22.4</acideAcidulees>
                 <glucides>85.2</glucides>
@@ -386,11 +396,11 @@
             <imageLink>link</imageLink>
         </aliment>
     </foods>
-    <categoricals>
-        <categorical id="ca1">Familial</categorical>
-        <categorical id="ca2">Twice</categorical>
-        <categorical id="ca3">Vegetarian</categorical>
-        <categorical id="ca4">Classique</categorical>
-        <categorical id="ca5">CO2 Smart</categorical>
-    </categoricals>
+    <categories>
+        <category id="ca1">Familial</category>
+        <category id="ca2">Twice</category>
+        <category id="ca3">Vegetarian</category>
+        <category id="ca4">Classique</category>
+        <category id="ca5">CO2 Smart</category>
+    </categories>
 </recipeBoxes>
