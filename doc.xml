@@ -9,8 +9,66 @@
             <customer-ref idref="c3"/>
             <deliveryman-ref idref="d2"/>
         </order>
-        <!--order id="a2"/-->
+        <order id="o2">
+            <menubox-ref id="mb1"/>
+            <customer-ref idref="c1"/>
+            <delivryman idref="d1"/>
+        </order>
+        <order id="o3">
+            <menubox-ref id="mb3"/>
+            <customer-ref idref="c3"/>
+            <delivryman idref="d1"/>
+        </order>
+        <order id="o4">
+            <menus>
+                    <menu> <recipe-ref idref="r1"/> </menu>
+                    <menu> <recipe-ref idref="r2"/> </menu>
+                    <menu> <recipe-ref idref="r3"/> </menu>
+            </menus>
+            <customer-ref idref="c2"/>
+            <delivryman idref="d3"/>
+        </order>
     </orders>
+    <menuboxes>
+        <menubox id="mb1">
+            <numberPerson>3</numberPerson>
+            <numberOfDish>5</numberOfDish>
+            <recipes>
+                <quantityRecipe>
+                    <quantity>3</quantity>
+                    <recipe-ref idref="r1" />
+                </quantityRecipe>
+                <quantityRecipe>
+                    <quantity>2</quantity>
+                    <recipe-ref idref="r3" />
+                </quantityRecipe>
+            </recipes>
+        </menubox>
+        <menubox id="mb2">
+            <numberPerson>2</numberPerson>
+            <numberOfDish>2</numberOfDish>
+            <recipes>
+                <quantityRecipe>
+                    <quantity>2</quantity>
+                    <recipe-ref idref="r2" />
+                </quantityRecipe>
+            </recipes>
+        </menubox>
+        <menubox id="mb3">
+            <numberPerson>2</numberPerson>
+            <numberOfDish>4</numberOfDish>
+            <recipes>
+                <quantityRecipe>
+                    <quantity>2</quantity>
+                    <recipe-ref idref="r1" />
+                </quantityRecipe>
+                <quantityRecipe>
+                    <quantity>2</quantity>
+                    <recipe-ref idref="r2" />
+                </quantityRecipe>
+            </recipes>
+        </menubox>
+    </menuboxes>
     <customers>
         <customer id="c1">
             <firstname>Luck</firstname>
@@ -49,7 +107,7 @@
         </deliveryman>
     </deliverymen>
     <comments>
-        <comment>
+        <comment id="co1">
             <recipe-ref idref="r1"/>
             <customer-ref idref="c2"/>
             <description>
@@ -58,7 +116,7 @@
             </description>
             <note>5</note>
         </comment>
-        <comment>
+        <comment id="co2">
             <recipe-ref idref="r2"/>
             <customer-ref idref="c1"/>
             <description>
@@ -66,7 +124,7 @@
             </description>
             <note>4</note>
         </comment>
-        <comment>
+        <comment id="co3">
             <recipe-ref idref="r3"/>
             <customer-ref idref="c3" />
             <description>
@@ -74,7 +132,7 @@
             </description>
             <note>1</note>
         </comment>
-        <comment>
+        <comment id="co4">
             <recipe-ref idref="r1"/>
             <customer-ref idref="c3"/>
             <description>
@@ -88,26 +146,40 @@
         <recipe id="r1">
             <name>Slow cooker meatballs</name>
             <description>Try these slow cooker meatballs for a tasty family meal. Turkey mince makes lighter meatballs which kids love. They also freeze well so you can batch cook</description>
+            <categorical-ref idref="c3"/>
+            <price>12</price>
             <ingredients>
                 <ingredient>
                     <aliment-ref idref="al1"/>
-                    <quantity>1</quantity>
+                    <quantity>
+                        <value>1</value>
+                    </quantity>
                 </ingredient>
                 <ingredient>
                     <aliment-ref idref="al2"/>
-                    <quantity>2</quantity>
+                    <quantity>
+                        <value>2</value>
+                    </quantity>
                 </ingredient>
                 <ingredient>
                     <aliment-ref idref="al3"/>
-                    <quantity>2</quantity>
+                    <quantity>
+                        <value>2</value>
+                    </quantity>
                 </ingredient>
                 <ingredient>
                     <aliment-ref idref="al4"/>
-                    <quantity>500 g</quantity>
+                    <quantity>
+                        <value>500</value>
+                        <unit>g</unit>
+                    </quantity>
                 </ingredient>
                 <ingredient>
                     <aliment-ref idref="al5"/>
-                    <quantity>400 g</quantity>
+                    <quantity>
+                        <value>400</value>
+                        <unit>g</unit>
+                    </quantity>
                 </ingredient>
             </ingredients>
             <difficulty>Easy</difficulty>
@@ -124,26 +196,50 @@
                 <direction>Heat the slow cooker if necessary. Heat the oil in a non-stick frying pan and add the onion, carrots, celery and garlic and fry gently for a minute. Pour in the passata, add the parsley and stir, then transfer the lot to the slow cooker.</direction>
                 <direction>To make the meatballs, tip the mince into a large bowl. Add the oats, paprika, garlic and plenty of black pepper, and mix everything together with your hands. Divide the mixture into 20 lumps about the size of a walnut and roll each piece into a meatball. Spray or run a non-stick pan with a little oil and gently cook the meatballs until they start to brown. Add them to the tomato base and cook on Low for 5 hours. Serve over rice or pasta if you like, or with a green salad.</direction>
             </directions>
+            <nutritionalValue>
+                <energieKJ>2070</energieKJ>
+                <eergieKcal>536</eergieKcal>
+                <fat>20</fat>
+                <acideAcidulees>32</acideAcidulees>
+                <glucides>12</glucides>
+                <sucres>6</sucres>
+                <proteine>45</proteine>
+                <sel>4</sel>
+            </nutritionalValue>
         </recipe>
         <recipe id="r2">
             <name>Slow cooker mac ’n’ cheese</name>
             <description>There’s no need to make a white sauce with this easy recipe. Just tip the ingredients into your slow cooker for a velvety smooth veggie pasta dish</description>
+            <categorical-ref idref="c1"/>
+            <price>10</price>
             <ingredients>
                 <ingredient>
                     <aliment-ref idref="al6"/>
-                    <quantity>350 g</quantity>
+                    <quantity>
+                        <value>350</value>
+                        <unit>g</unit>
+                    </quantity>
                 </ingredient>
                 <ingredient>
                     <aliment-ref idref="al7"/>
-                    <quantity>600 ml</quantity>
+                    <quantity>
+                        <value>600</value>
+                        <unit>ml</unit>
+                    </quantity>
                 </ingredient>
                 <ingredient>
                     <aliment-ref idref="al8"/>
-                    <quantity>50 g</quantity>
+                    <quantity>
+                        <value>50</value>
+                        <unit>g</unit>
+                    </quantity>
                 </ingredient>
                 <ingredient>
                     <aliment-ref idref="al9"/>
-                    <quantity>50 g</quantity>
+                    <quantity>
+                        <value>50</value>
+                        <unit>g</unit>
+                    </quantity>
                 </ingredient>
             </ingredients>
             <difficulty>Easy</difficulty>
@@ -159,26 +255,48 @@
                 <direction>Pour boiling water over the pasta and drain, then put everything in a slow cooker and stir well. Season, cover and cook on low for 1 hr. Stir again, put the lid back on and cook for another 30 mins until the pasta is cooked and the sauce has reduced enough to coat the macaroni.</direction>
                 <direction>Leave the lid off and reduce for the last 10 mins if you need to, or add a splash more milk – this will depend on the size of your slow cooker and the brand. Serve with extra cheese.</direction>
             </directions>
+            <nutritionalValue>
+                <energieKJ>3080</energieKJ>
+                <eergieKcal>759</eergieKcal>
+                <fat>34</fat>
+                <acideAcidulees>22</acideAcidulees>
+                <glucides>50</glucides>
+                <sucres>8.4</sucres>
+                <proteine>30.5</proteine>
+                <sel>2</sel>
+            </nutritionalValue>
         </recipe>
         <recipe id="r3">
             <name>Slow cooker vegetable lasagne</name>
             <description>Make this low-calorie veggie lasagne as a lighter alternative to the traditional bake. It's layered with pasta, ratatouille and sliced aubergine, and packs in all of your five-a-day</description>
+            <categorical-ref idref="c3"/>
+            <price>14</price>
             <ingredients>
                 <ingredient>
                     <aliment-ref idref="al1"/>
-                    <quantity>2</quantity>
+                    <quantity>
+                        <value>2</value>
+                    </quantity>
                 </ingredient>
                 <ingredient>
                     <aliment-ref idref="al10"/>
-                    <quantity>2</quantity>
+                    <quantity>
+                        <value>2</value>
+                    </quantity>
                 </ingredient>
                 <ingredient>
                     <aliment-ref idref="al11"/>
-                    <quantity>400 g</quantity>
+                    <quantity>
+                        <value>400</value>
+                        <unit>g</unit>
+                    </quantity>
                 </ingredient>
                 <ingredient>
                     <aliment-ref idref="al12"/>
-                    <quantity>125 g</quantity>
+                    <quantity>
+                        <value>125</value>
+                        <unit>g</unit>
+                    </quantity>
                 </ingredient>
             </ingredients>
             <difficulty>Easy</difficulty>
@@ -201,6 +319,16 @@
                 <direction>Scatter 125g vegetarian buffalo mozzarella over the vegetables then cover and leave for 10 mins to settle and melt the cheese.</direction>
                 <direction>Scatter with extra basil and serve with a handful of rocket.</direction>
             </directions>
+            <nutritionalValue>
+                <energieKJ>3840</energieKJ>
+                <eergieKcal>919</eergieKcal>
+                <fat>49.2</fat>
+                <acideAcidulees>22.4</acideAcidulees>
+                <glucides>85.2</glucides>
+                <sucres>17.9</sucres>
+                <proteine>35.5</proteine>
+                <sel>2.6</sel>
+            </nutritionalValue>
         </recipe>
     </recipes>
     <aspects>
@@ -258,4 +386,11 @@
             <imageLink>link</imageLink>
         </aliment>
     </foods>
+    <categoricals>
+        <categorical id="ca1">Familial</categorical>
+        <categorical id="ca2">Twice</categorical>
+        <categorical id="ca3">Vegetarian</categorical>
+        <categorical id="ca4">Classique</categorical>
+        <categorical id="ca5">CO2 Smart</categorical>
+    </categoricals>
 </recipeBoxes>
