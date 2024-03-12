@@ -1,15 +1,15 @@
 <recipeBoxes>
     <orders>
-        <order id="a1">
+        <order id="o1">
             <menus>
                 <menu>
                     <recipe-ref idref="r2"/>
                 </menu>
             </menus>
             <customer-ref idref="c3"/>
-            <delivryman-ref idref="d2"/>
+            <deliveryman-ref idref="d2"/>
         </order>
-        <order id="a2"/>
+        <!--order id="a2"/-->
     </orders>
     <customers>
         <customer id="c1">
@@ -98,7 +98,7 @@
                     <quantity>2</quantity>
                 </ingredient>
                 <ingredient>
-                    <food idref="al3"/>
+                    <aliment-ref idref="al3"/>
                     <quantity>2</quantity>
                 </ingredient>
                 <ingredient>

@@ -9,7 +9,11 @@
 
     <xs:complexType name="ingredientType">
         <xs:sequence>
-            <xs:element name="aliment" type="alimentType"/>
+            <xs:element name="aliment-ref">
+                <xs:complexType>
+                    <xs:attribute name="idref" type="xs:IDREF"/>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="quantity" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
@@ -17,6 +21,7 @@
     <xs:complexType name="recipeType">
         <xs:sequence>
             <xs:element name="name" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
             <xs:element name="ingredients">
                 <xs:complexType>
                     <xs:sequence>
@@ -25,7 +30,7 @@
                 </xs:complexType>
             </xs:element>
             <xs:element name="difficulty" type="xs:string"/>
-            <xs:element name="serves" type="xs:string"/>
+            <xs:element name="serves" type="xs:positiveInteger"/>
             <xs:element name="time">
                 <xs:complexType>
                     <xs:sequence>
@@ -34,10 +39,21 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="instructions">
+            <xs:element name="aspects-ref">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="instruction" type="xs:string" maxOccurs="unbounded"/>
+                        <xs:element name="aspect-ref" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:attribute name="idref" type="xs:IDREF"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="directions">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="direction" type="xs:string" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -152,6 +168,28 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="recipe" type="recipeType" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="aspects">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="aspect" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="id" type="xs:ID" />
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="foods">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="aliment" type="alimentType" minOccurs="0" maxOccurs="unbounded"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
