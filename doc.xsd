@@ -7,6 +7,13 @@
         <xs:attribute name="id" type="xs:ID"/>
     </xs:complexType>
 
+    <xs:complexType name="quantityType">
+        <xs:sequence>
+            <xs:element name="value" type="xs:double"/>
+            <xs:element name="unit" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
     <xs:complexType name="ingredientType">
         <xs:sequence>
             <xs:element name="aliment-ref">
@@ -14,7 +21,7 @@
                     <xs:attribute name="idref" type="xs:IDREF"/>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="quantity" type="xs:string"/>
+            <xs:element name="quantity" type="quantityType"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -22,6 +29,12 @@
         <xs:sequence>
             <xs:element name="name" type="xs:string"/>
             <xs:element name="description" type="xs:string"/>
+            <xs:element name="category-ref">
+                <xs:complexType>
+                    <xs:attribute name="idref" type="xs:IDREF"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="price" type="xs:double"/>
             <xs:element name="ingredients">
                 <xs:complexType>
                     <xs:sequence>
@@ -54,6 +67,20 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="direction" type="xs:string" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="nutritionalValue">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="energieKJ" type="xs:string"/>
+                        <xs:element name="energieKcal" type="xs:string"/>
+                        <xs:element name="fat" type="xs:string"/>
+                        <xs:element name="acideAcidulees" type="xs:string"/>
+                        <xs:element name="glucides" type="xs:string"/>
+                        <xs:element name="sucres" type="xs:string"/>
+                        <xs:element name="proteine" type="xs:string"/>
+                        <xs:element name="sel" type="xs:string"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -94,10 +121,21 @@
 
     <xs:complexType name="orderType">
         <xs:sequence>
-            <xs:element name="menus" maxOccurs="unbounded">
+            <xs:element name="menus" minOccurs="0">
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="menu" type="menuType" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="menuboxes-ref" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="menubox-ref">
+                            <xs:complexType>
+                                <xs:attribute name="idref" type="xs:IDREF"/>
+                            </xs:complexType>
+                        </xs:element>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -133,6 +171,32 @@
         <xs:attribute name="id" type="xs:ID"/>
     </xs:complexType>
 
+    <xs:complexType name="menuboxType">
+        <xs:sequence>
+            <xs:element name="numberPerson" type="xs:positiveInteger"/>
+            <xs:element name="numberOfDish" type="xs:positiveInteger"/>
+            <xs:element name="recipes">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="quantityRecipe" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="quantity" type="xs:positiveInteger"/>
+                                    <xs:element name="recipe-ref">
+                                        <xs:complexType>
+                                            <xs:attribute name="idref" type="xs:IDREF"/>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID"/>
+    </xs:complexType>
+
     <xs:element name="recipeBoxes">
         <xs:complexType>
             <xs:sequence>
@@ -140,6 +204,13 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="order" type="orderType" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="menuboxes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="menubox" type="menuboxType" minOccurs="0" maxOccurs="unbounded"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -190,6 +261,21 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="aliment" type="alimentType" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="categories">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="category" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="id" type="xs:ID" />
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
