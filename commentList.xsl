@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
     <xsl:key name="keyRecipe" match="recipe" use="@id"/>
     <xsl:key name="keyCustomer" match="customer" use="@id"/>
 
@@ -11,13 +9,12 @@
                     table, th, td {
                     border: 1px solid;
                     }
-                    table{
-                    width : 100%;
+                    table {
+                    width: 100%;
                     }
-                    .header{
+                    .header {
                     background-color: green;
                     }
-
                 </style>
             </head>
             <body>
@@ -30,9 +27,16 @@
                         <th class="header">DESCRIPTION</th>
                     </tr>
                     <xsl:for-each select="recipeBoxes/comments/comment">
+                        <xsl:sort select="note" data-type="number" order="descending"/>
+                        <xsl:sort select="key('keyRecipe', recipe-ref/@idref)/name"/>
+                        <xsl:sort select="key('keyCustomer', customer-ref/@idref)/firstname"/>
                         <tr>
-                            <th><xsl:value-of select="key('keyRecipe', recipe-ref/@idref)/name"/> </th>
-                            <th><xsl:value-of select="key('keyCustomer', customer-ref/@idref)/firstname"/> <xsl:value-of select="key('keyCustomer', customer-ref/@idref)/lastname"/></th>
+                            <th><xsl:value-of select="key('keyRecipe', recipe-ref/@idref)/name"/></th>
+                            <th>
+                                <xsl:value-of select="key('keyCustomer', customer-ref/@idref)/firstname"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="key('keyCustomer', customer-ref/@idref)/lastname"/>
+                            </th>
                             <th><xsl:value-of select="note"/></th>
                             <th><xsl:value-of select="description"/></th>
                         </tr>
@@ -41,5 +45,4 @@
             </body>
         </html>
     </xsl:template>
-
 </xsl:stylesheet>
