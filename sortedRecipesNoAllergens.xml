@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<recipeBoxes>
+  <recipe>
+    <id>r2</id>
+    <name>Slow cooker mac ’n’ cheese</name>
+    <description>There’s no need to make a white sauce with this easy recipe. Just tip the ingredients into your slow cooker for a velvety smooth veggie pasta dish</description>
+    <imageLink>link</imageLink>
+    <category>
+      <name/>
+    </category>
+    <price>10</price>
+    <ingredients>
+      <ingredient>
+        <aliment>
+          <name>Macaroni pasta</name>
+        </aliment>
+        <quantity>
+          <value>350</value>
+          <unit>g</unit>
+        </quantity>
+      </ingredient>
+      <ingredient>
+        <aliment>
+          <name>Milk</name>
+        </aliment>
+        <quantity>
+          <value>600</value>
+          <unit>ml</unit>
+        </quantity>
+      </ingredient>
+      <ingredient>
+        <aliment>
+          <name>Butter</name>
+        </aliment>
+        <quantity>
+          <value>50</value>
+          <unit>g</unit>
+        </quantity>
+      </ingredient>
+      <ingredient>
+        <aliment>
+          <name>Cheddar</name>
+        </aliment>
+        <quantity>
+          <value>50</value>
+          <unit>g</unit>
+        </quantity>
+      </ingredient>
+    </ingredients>
+    <difficulty>Easy</difficulty>
+    <serves>4</serves>
+    <time>
+      <prep>15 mins</prep>
+      <cook>1 hr 30 mins</cook>
+    </time>
+    <aspects-ref>
+      <aspect>
+        <name>Vegetarian</name>
+      </aspect>
+    </aspects-ref>
+    <directions>
+      <direction>Pour boiling water over the pasta and drain, then put everything in a slow cooker and stir well. Season, cover and cook on low for 1 hr. Stir again, put the lid back on and cook for another 30 mins until the pasta is cooked and the sauce has reduced enough to coat the macaroni.</direction>
+      <direction>Leave the lid off and reduce for the last 10 mins if you need to, or add a splash more milk – this will depend on the size of your slow cooker and the brand. Serve with extra cheese.</direction>
+    </directions>
+    <nutritionalValue>
+      <energieKJ>3080</energieKJ>
+      <energieKcal>759</energieKcal>
+      <fat>34</fat>
+      <acideAcidulees>22</acideAcidulees>
+      <glucides>50</glucides>
+      <sucres>8.4</sucres>
+      <proteine>30.5</proteine>
+      <sel>2</sel>
+    </nutritionalValue>
+    <allergens/>
+  </recipe>
+  <recipe>
+    <id>r1</id>
+    <name>Slow cooker meatballs</name>
+    <description>Try these slow cooker meatballs for a tasty family meal. Turkey mince makes lighter meatballs which kids love. They also freeze well so you can batch cook</description>
+    <imageLink>link</imageLink>
+    <category>
+      <name/>
+    </category>
+    <price>12</price>
+    <ingredients>
+      <ingredient>
+        <aliment>
+          <name>Onion</name>
+        </aliment>
+        <quantity>
+          <value>1</value>
+          <unit>pièce(s)</unit>
+        </quantity>
+      </ingredient>
+      <ingredient>
+        <aliment>
+          <name>Carrot</name>
+        </aliment>
+        <quantity>
+          <value>2</value>
+          <unit>pièce(s)</unit>
+        </quantity>
+      </ingredient>
+      <ingredient>
+        <aliment>
+          <name>Celery sticks</name>
+        </aliment>
+        <quantity>
+          <value>2</value>
+          <unit>pièce(s)</unit>
+        </quantity>
+      </ingredient>
+      <ingredient>
+        <aliment>
+          <name>Tomato sauce</name>
+        </aliment>
+        <quantity>
+          <value>500</value>
+          <unit>g</unit>
+        </quantity>
+      </ingredient>
+      <ingredient>
+        <aliment>
+          <name>Chicken</name>
+        </aliment>
+        <quantity>
+          <value>400</value>
+          <unit>g</unit>
+        </quantity>
+      </ingredient>
+    </ingredients>
+    <difficulty>Easy</difficulty>
+    <serves>5</serves>
+    <time>
+      <prep>1 hr</prep>
+      <cook>5 hr</cook>
+    </time>
+    <aspects-ref>
+      <aspect>
+        <name>Health</name>
+      </aspect>
+      <aspect>
+        <name>Freezable</name>
+      </aspect>
+    </aspects-ref>
+    <directions>
+      <direction>Heat the slow cooker if necessary. Heat the oil in a non-stick frying pan and add the onion, carrots, celery and garlic and fry gently for a minute. Pour in the passata, add the parsley and stir, then transfer the lot to the slow cooker.</direction>
+      <direction>To make the meatballs, tip the mince into a large bowl. Add the oats, paprika, garlic and plenty of black pepper, and mix everything together with your hands. Divide the mixture into 20 lumps about the size of a walnut and roll each piece into a meatball. Spray or run a non-stick pan with a little oil and gently cook the meatballs until they start to brown. Add them to the tomato base and cook on Low for 5 hours. Serve over rice or pasta if you like, or with a green salad.</direction>
+    </directions>
+    <nutritionalValue>
+      <energieKJ>2070</energieKJ>
+      <energieKcal>536</energieKcal>
+      <fat>20</fat>
+      <acideAcidulees>32</acideAcidulees>
+      <glucides>12</glucides>
+      <sucres>6</sucres>
+      <proteine>45</proteine>
+      <sel>4</sel>
+    </nutritionalValue>
+    <allergens/>
+  </recipe>
+  <recipe>
+    <id>r3</id>
+    <name>Slow cooker vegetable lasagne</name>
+    <description>Make this low-calorie veggie lasagne as a lighter alternative to the traditional bake. It's layered with pasta, ratatouille and sliced aubergine, and packs in all of your five-a-day</description>
+    <imageLink>link</imageLink>
+    <category>
+      <name/>
+    </category>
+    <price>14</price>
+    <ingredients>
+      <ingredient>
+        <aliment>
+          <name>Onion</name>
+        </aliment>
+        <quantity>
+          <value>2</value>
+          <unit>pièce(s)</unit>
+        </quantity>
+      </ingredient>
+      <ingredient>
+        <aliment>
+          <name>large courgettes</name>
+        </aliment>
+        <quantity>
+          <value>2</value>
+          <unit>pièce(s)</unit>
+        </quantity>
+      </ingredient>
+      <ingredient>
+        <aliment>
+          <name>tomato</name>
+        </aliment>
+        <quantity>
+          <value>400</value>
+          <unit>g</unit>
+        </quantity>
+      </ingredient>
+      <ingredient>
+        <aliment>
+          <name>vegetable buffalo mozzarella</name>
+        </aliment>
+        <quantity>
+          <value>125</value>
+          <unit>g</unit>
+        </quantity>
+      </ingredient>
+    </ingredients>
+    <difficulty>Easy</difficulty>
+    <serves>4</serves>
+    <time>
+      <prep>30 mins</prep>
+      <cook>2hr 30mins</cook>
+    </time>
+    <aspects-ref>
+      <aspect>
+        <name>Health</name>
+      </aspect>
+      <aspect>
+        <name>Vegetarian</name>
+      </aspect>
+    </aspects-ref>
+    <directions>
+      <direction>Heat 1 tbsp rapeseed oil in a large non-stick pan and fry 2 sliced onions and 2 chopped large garlic cloves for 5 mins, stirring frequently until softened</direction>
+      <direction>Tip in 2 diced large courgettes, 1 red and 1 yellow pepper, both roughly sliced, and 400g chopped tomatoes with 2 tbsp tomato purée, 2 tsp vegetable bouillon and 15g chopped basil.</direction>
+      <direction>Stir well, cover and cook for 5 mins. Don't be tempted to add more liquid as plenty of moisture will come from the vegetables once they start cooking.</direction>
+      <direction>Slice 1 large aubergine. Lay half the slices of aubergine in the base of the slow cooker and top with 3 sheets of lasagne.</direction>
+      <direction>Add a third of the ratatouille mixture, then the remaining aubergine slices, 3 more lasagne sheets, then the remaining ratatouille mixture.</direction>
+      <direction>Cover and cook on High for 2½ - 3 hours until the pasta and vegetables are tender. Turn off the machine.</direction>
+      <direction>Scatter 125g vegetarian buffalo mozzarella over the vegetables then cover and leave for 10 mins to settle and melt the cheese.</direction>
+      <direction>Scatter with extra basil and serve with a handful of rocket.</direction>
+    </directions>
+    <nutritionalValue>
+      <energieKJ>3840</energieKJ>
+      <energieKcal>919</energieKcal>
+      <fat>49.2</fat>
+      <acideAcidulees>22.4</acideAcidulees>
+      <glucides>85.2</glucides>
+      <sucres>17.9</sucres>
+      <proteine>35.5</proteine>
+      <sel>2.6</sel>
+    </nutritionalValue>
+    <allergens/>
+  </recipe>
+</recipeBoxes>
