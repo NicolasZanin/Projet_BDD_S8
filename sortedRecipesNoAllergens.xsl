@@ -1,10 +1,8 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output method="xml" indent="yes"/>
 
-    <!-- Paramètre contenant l'ID du client -->
     <xsl:param name="clientID" select="'c3'"/>
 
-    <!-- Template correspondant à l'élément racine -->
     <xsl:template match="/">
         <recipeBoxes>
             <xsl:apply-templates select="recipeBoxes/recipes/recipe[not(allergens-ref/allergen-ref/@idref = /recipeBoxes/customers/customer[@id = $clientID]/allergens-ref/allergen-ref/@idref)]">
@@ -14,7 +12,6 @@
         </recipeBoxes>
     </xsl:template>
 
-    <!-- Template correspondant aux recettes -->
     <xsl:template match="recipe">
         <recipe>
             <id><xsl:value-of select="@id"/></id>
