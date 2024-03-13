@@ -1,4 +1,12 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType name="allergenType">
+        <xs:sequence>
+            <xs:element name="value" type="xs:string"/>
+            <xs:element name="imageLink" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID"/>
+    </xs:complexType>
+
     <xs:complexType name="alimentType">
         <xs:sequence>
             <xs:element name="name" type="xs:string"/>
@@ -29,6 +37,7 @@
         <xs:sequence>
             <xs:element name="name" type="xs:string"/>
             <xs:element name="description" type="xs:string"/>
+            <xs:element name="imageLink" type="xs:string"/>
             <xs:element name="category-ref">
                 <xs:complexType>
                     <xs:attribute name="idref" type="xs:IDREF"/>
@@ -84,6 +93,17 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="allergens-ref">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="allergen-ref" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:attribute name="idref" type="xs:IDREF"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID"/>
     </xs:complexType>
@@ -114,7 +134,19 @@
         <xs:sequence>
             <xs:element name="firstname" type="xs:string"/>
             <xs:element name="lastname" type="xs:string"/>
+            <xs:element name="imageLink" type="xs:string"/>
             <xs:element name="mail" type="xs:string"/>
+            <xs:element name="allergens-ref">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="allergen-ref" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:attribute name="idref" type="xs:IDREF"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID"/>
     </xs:complexType>
@@ -279,8 +311,14 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+                <xs:element name="allergens">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="allergen" type="allergenType" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
 </xs:schema>

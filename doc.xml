@@ -78,17 +78,30 @@
         <customer id="c1">
             <firstname>Luck</firstname>
             <lastname>Skywalker</lastname>
+            <imageLink>link</imageLink>
             <mail>luck.skywalker@galaxy.com</mail>
+            <allergens-ref>
+                <allergen-ref idref="alg12"/>
+            </allergens-ref>
         </customer>
         <customer id="c2">
             <firstname>Obiwan</firstname>
             <lastname>Kenobi</lastname>
+            <imageLink>link</imageLink>
             <mail>obiwan.kenobi@galaxy.com</mail>
+            <allergens-ref>
+            </allergens-ref>
         </customer>
        <customer id="c3">
            <firstname>Sheldon</firstname>
            <lastname>Cooper</lastname>
+           <imageLink>link</imageLink>
            <mail>sheldon.cooper@scientist.com</mail>
+           <allergens-ref>
+               <allergen-ref idref="alg1"/>
+               <allergen-ref idref="alg2"/>
+               <allergen-ref idref="alg8"/>
+           </allergens-ref>
        </customer>
     </customers>
     <deliverymen>
@@ -151,6 +164,7 @@
         <recipe id="r1">
             <name>Slow cooker meatballs</name>
             <description>Try these slow cooker meatballs for a tasty family meal. Turkey mince makes lighter meatballs which kids love. They also freeze well so you can batch cook</description>
+            <imageLink>link</imageLink>
             <category-ref idref="c3"/>
             <price>12</price>
             <ingredients>
@@ -214,10 +228,13 @@
                 <proteine>45</proteine>
                 <sel>4</sel>
             </nutritionalValue>
+            <allergens-ref>
+            </allergens-ref>
         </recipe>
         <recipe id="r2">
             <name>Slow cooker mac ’n’ cheese</name>
             <description>There’s no need to make a white sauce with this easy recipe. Just tip the ingredients into your slow cooker for a velvety smooth veggie pasta dish</description>
+            <imageLink>link</imageLink>
             <category-ref idref="c1"/>
             <price>10</price>
             <ingredients>
@@ -273,10 +290,13 @@
                 <proteine>30.5</proteine>
                 <sel>2</sel>
             </nutritionalValue>
+            <allergens-ref>
+            </allergens-ref>
         </recipe>
         <recipe id="r3">
             <name>Slow cooker vegetable lasagne</name>
             <description>Make this low-calorie veggie lasagne as a lighter alternative to the traditional bake. It's layered with pasta, ratatouille and sliced aubergine, and packs in all of your five-a-day</description>
+            <imageLink>link</imageLink>
             <category-ref idref="c3"/>
             <price>14</price>
             <ingredients>
@@ -339,6 +359,8 @@
                 <proteine>35.5</proteine>
                 <sel>2.6</sel>
             </nutritionalValue>
+            <allergens-ref>
+            </allergens-ref>
         </recipe>
     </recipes>
     <aspects>
@@ -403,4 +425,62 @@
         <category id="ca4">Classique</category>
         <category id="ca5">CO2 Smart</category>
     </categories>
+    <allergens>
+        <allergen id="alg1">
+            <value>Celery</value>
+            <imageLink>link</imageLink>
+        </allergen>
+        <allergen id="alg2">
+            <value>Gluten</value>
+            <imageLink>link</imageLink>
+        </allergen>
+        <allergen id="alg3">
+            <value>Crustaceans</value>
+            <imageLink>link</imageLink>
+        </allergen>
+        <allergen id="alg4">
+            <value>Eggs</value>
+            <imageLink>link</imageLink>
+        </allergen>
+        <allergen id="alg5">
+            <value>Fish</value>
+            <imageLink>link</imageLink>
+        </allergen>
+        <allergen id="alg6">
+            <value>Lupin</value>
+            <imageLink>link</imageLink>
+        </allergen>
+        <allergen id="alg7">
+            <value>Milk</value>
+            <imageLink>link</imageLink>
+        </allergen>
+        <allergen id="alg8">
+            <value>Molluscs</value>
+            <imageLink>link</imageLink>
+        </allergen>
+        <allergen id="alg9">
+            <value>Mustard</value>
+            <imageLink>link</imageLink>
+        </allergen>
+        <allergen id="alg10">
+            <value>Nuts</value>
+            <imageLink>link</imageLink>
+        </allergen>
+        <allergen id="alg11">
+            <value>Peanuts</value>
+            <imageLink>link</imageLink>
+        </allergen>
+        <allergen id="alg12">
+            <value>Sesame seeds</value>
+            <imageLink>link</imageLink>
+        </allergen>
+        <allergen id="alg13">
+            <value>Sulphur dioxide</value>
+            <imageLink>link</imageLink>
+        </allergen>
+        <allergen id="alg14">
+            <value>Soya</value>
+            <imageLink>link</imageLink>
+        </allergen>
+    </allergens>
 </recipeBoxes>
