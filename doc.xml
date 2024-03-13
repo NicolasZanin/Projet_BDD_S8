@@ -38,7 +38,7 @@
         <menubox id="mb1">
             <numberPerson>3</numberPerson>
             <numberOfDish>5</numberOfDish>
-            <recipes>
+            <recipesBoxes>
                 <quantityRecipe>
                     <quantity>3</quantity>
                     <recipe-ref idref="r1" />
@@ -47,22 +47,22 @@
                     <quantity>2</quantity>
                     <recipe-ref idref="r3" />
                 </quantityRecipe>
-            </recipes>
+            </recipesBoxes>
         </menubox>
         <menubox id="mb2">
             <numberPerson>2</numberPerson>
             <numberOfDish>2</numberOfDish>
-            <recipes>
+            <recipesBoxes>
                 <quantityRecipe>
                     <quantity>2</quantity>
                     <recipe-ref idref="r2" />
                 </quantityRecipe>
-            </recipes>
+            </recipesBoxes>
         </menubox>
         <menubox id="mb3">
             <numberPerson>2</numberPerson>
             <numberOfDish>4</numberOfDish>
-            <recipes>
+            <recipesBoxes>
                 <quantityRecipe>
                     <quantity>2</quantity>
                     <recipe-ref idref="r1" />
@@ -71,7 +71,7 @@
                     <quantity>2</quantity>
                     <recipe-ref idref="r2" />
                 </quantityRecipe>
-            </recipes>
+            </recipesBoxes>
         </menubox>
     </menuboxes>
     <customers>
@@ -165,7 +165,7 @@
             <name>Slow cooker meatballs</name>
             <description>Try these slow cooker meatballs for a tasty family meal. Turkey mince makes lighter meatballs which kids love. They also freeze well so you can batch cook</description>
             <imageLink>link</imageLink>
-            <category-ref idref="c3"/>
+            <category-ref idref="ca3"/>
             <price>12</price>
             <ingredients>
                 <ingredient>
@@ -235,7 +235,7 @@
             <name>Slow cooker mac ’n’ cheese</name>
             <description>There’s no need to make a white sauce with this easy recipe. Just tip the ingredients into your slow cooker for a velvety smooth veggie pasta dish</description>
             <imageLink>link</imageLink>
-            <category-ref idref="c1"/>
+            <category-ref idref="ca1"/>
             <price>10</price>
             <ingredients>
                 <ingredient>
@@ -297,7 +297,7 @@
             <name>Slow cooker vegetable lasagne</name>
             <description>Make this low-calorie veggie lasagne as a lighter alternative to the traditional bake. It's layered with pasta, ratatouille and sliced aubergine, and packs in all of your five-a-day</description>
             <imageLink>link</imageLink>
-            <category-ref idref="c3"/>
+            <category-ref idref="ca3"/>
             <price>14</price>
             <ingredients>
                 <ingredient>
