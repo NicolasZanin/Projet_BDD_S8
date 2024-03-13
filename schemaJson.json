@@ -1,0 +1,200 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "http://yourdomain.com/schemas/myschema.json",
+  "title": "order",
+  "type": "object",
+  "properties": {
+    "menus" : {
+      "type": "array",
+      "menu": {
+        "type": "object",
+        "recipe": {
+          "type": "object",
+          "name": {
+            "description": "name of recipe",
+            "type": "string",
+            "minLength": 3
+          },
+          "description": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 1500
+          },
+          "category": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 1500
+          },
+          "price" : {
+            "type": "number",
+            "min": 0
+          },
+          "ingredients": {
+            "type": "array",
+            "ingredient" : {
+              "aliment" : {
+                "type": "object",
+                "name": {
+                  "description": "name of aliment",
+                  "type": "string",
+                  "minLength": 3
+                },
+                "imageLink": {
+                  "description" : "image link of aliment",
+                  "type": "string",
+                  "minLength": 3
+                }
+              },
+              "quantity": {
+                "type": "object",
+                "value": {
+                  "description": "quantity of aliment",
+                  "type": "number",
+                  "min": 0
+                },
+                "unit": {
+                  "description": "unit of aliment",
+                  "type": "string",
+                  "minLength": 3
+                }
+              }
+            },
+            "minAliment": 1,
+            "uniqueItems": true
+          },
+          "difficulty": {
+            "description": "difficult to make recipe",
+            "type": "string",
+            "minLength": 3
+          },
+          "serves": {
+            "description": "number of player",
+            "type": "number",
+            "min": 0
+          },
+          "time": {
+            "type": "object",
+            "prep": {
+              "description": "preparation Order",
+              "type": "number",
+              "min": 0
+            },
+            "cook": {
+              "description": "cook Order",
+              "type": "number",
+              "min": 0
+            }
+          },
+          "aspects": {
+            "type": "array",
+            "aspect" : {
+              "description": "name of recipe Aspect",
+              "type": "string"
+            },
+            "minAliment": 1,
+            "uniqueItems": true
+          },
+          "directions": {
+            "type": "array",
+            "direction" : {
+              "description": "direction",
+              "type": "string"
+            },
+            "minAliment": 1,
+            "uniqueItems": true
+          },
+          "valueNutritional" : {
+            "type": "object",
+            "energieKJ": {
+              "type": "number",
+              "description": "energieKJ to spend"
+            },
+
+            "type": "object",
+            "energieKcal": {
+              "type": "number",
+              "description": "energieKcal to spend"
+            },
+
+            "type": "object",
+            "fat": {
+              "type": "number",
+              "description": "fat if not spend"
+            },
+            "acideAcidulees" : {
+              "type": "number",
+              "description": "Acide acidulées"
+            },
+            "glucide" : {
+              "type": "number",
+              "description": "Glucide"
+            },
+            "sucres" : {
+              "type" : "number",
+              "description" : ""
+            },
+
+            "proteine":   {
+              "type": "number",
+              "description": "protein"
+            },
+
+            "sel" : {
+              "type": "number",
+              "description": "sel"
+            }
+          }
+        }
+      }
+    },
+    "minMenus": 1,
+    "uniqueItems": true
+  },
+  "customer" : {
+    "type": "object",
+    "properties": {
+      "firstname": {
+        "description": "firstname of customer",
+        "type": "string",
+        "minLength": 3
+      },
+      "lastname": {
+        "description": "lastname of customer",
+        "type": "string",
+        "minLength": 3
+      },
+      "mail": {
+        "description": "mail of customer",
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "required": ["firstname", "lastname", "mail"]
+  },
+  "deliveryman" : {
+    "type": "object",
+    "properties": {
+      "firstname": {
+        "description": "firstname of deliveryman",
+        "type": "string",
+        "minLength": 3
+      },
+      "lastname": {
+        "description": "lastname of deliveryman",
+        "type": "string",
+        "minLength": 3
+      },
+      "mail": {
+        "description": "mail of deliveryman",
+        "type": "string",
+        "minLength": 3
+      },
+      "score": {
+        "description": "score of deliveryman",
+        "minimum": 0,
+        "type": "number"
+      }
+    },
+    "required": ["firstname", "lastname", "mail"]
+  }
+}
