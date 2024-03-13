@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
     <xsl:key name="keyAliment" match="aliment" use="@id"/>
-
     <xsl:template match="/">
         <html>
             <head>
@@ -16,10 +14,13 @@
                     .header{
                     background-color: green;
                     }
-
+                    .modal, .hideModal{
+                    display : none;
+                    }
                 </style>
+                <script type="text/javascript" src="modalHideShow.js"/>
             </head>
-            <body>
+            <body onload="loadModal()">
                 <h2>RECIPES</h2>
                 <table>
                     <tr>
@@ -30,7 +31,16 @@
                     <xsl:for-each select="recipeBoxes/recipes/recipe">
                         <tr>
                             <th><xsl:value-of select="name"/></th>
-                            <th><xsl:value-of select="description"/></th>
+                            <th>
+                                <xsl:value-of select="difficulty"/>
+                                <br/>
+                                <xsl:value-of select="description"/>
+                                <button class="showModal">+</button>
+                                <button class="hideModal">-</button>
+                                <p class="modal">
+                                    <xsl:value-of select="directions"/>
+                                </p>
+                            </th>
                             <th>
                                 <xsl:for-each select="ingredients/ingredient">
                                     <p>
@@ -44,5 +54,4 @@
             </body>
         </html>
     </xsl:template>
-
 </xsl:stylesheet>
