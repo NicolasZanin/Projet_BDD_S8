@@ -207,7 +207,7 @@
         <xs:sequence>
             <xs:element name="numberPerson" type="xs:positiveInteger"/>
             <xs:element name="numberOfDish" type="xs:positiveInteger"/>
-            <xs:element name="recipes">
+            <xs:element name="recipesBoxes">
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="quantityRecipe" maxOccurs="unbounded">
