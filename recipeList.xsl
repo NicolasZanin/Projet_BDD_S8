@@ -37,9 +37,13 @@
                                 <xsl:value-of select="description"/>
                                 <button class="showModal">+</button>
                                 <button class="hideModal">-</button>
-                                <p class="modal">
-                                    <xsl:value-of select="directions"/>
-                                </p>
+                                <div class="modal">
+                                    <xsl:for-each select="directions/direction">
+                                        <p>
+                                            <xsl:value-of select="current()"/>
+                                        </p>
+                                    </xsl:for-each>
+                                </div>
                             </th>
                             <th>
                                 <xsl:for-each select="ingredients/ingredient">
