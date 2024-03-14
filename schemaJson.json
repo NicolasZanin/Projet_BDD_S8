@@ -1,200 +1,255 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$id": "http://yourdomain.com/schemas/myschema.json",
-  "title": "order",
+  "title": "orders",
   "type": "object",
-  "properties": {
-    "menus" : {
-      "type": "array",
-      "menu": {
-        "type": "object",
-        "recipe": {
-          "type": "object",
-          "name": {
-            "description": "name of recipe",
-            "type": "string",
-            "minLength": 3
-          },
-          "description": {
-            "type": "string",
-            "minLength": 3,
-            "maxLength": 1500
-          },
-          "category": {
-            "type": "string",
-            "minLength": 3,
-            "maxLength": 1500
-          },
-          "price" : {
-            "type": "number",
-            "min": 0
-          },
-          "ingredients": {
-            "type": "array",
-            "ingredient" : {
-              "aliment" : {
+  "orders" : {
+    "description": "orders of the restaurant",
+    "type": "array",
+    "order": {
+      "type": "object",
+      "properties": {
+        "menus": {
+          "type": "array",
+          "menu": {
+            "type": "object",
+            "properties": {
+              "recipe": {
                 "type": "object",
-                "name": {
-                  "description": "name of aliment",
-                  "type": "string",
-                  "minLength": 3
+                "properties": {
+                  "name": {
+                    "description": "name of recipe",
+                    "type": "string",
+                    "minLength": 3
+                  },
+                  "description": {
+                    "description": "description of recipe",
+                    "type": "string",
+                    "minLength": 3
+                  },
+                  "imageLink": {
+                    "description": "link to image",
+                    "type": "string"
+                  },
+                  "category" : {
+                    "description": "category of recipe",
+                    "type": "string"
+                  },
+                  "price": {
+                    "description": "price of recipe",
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "ingredients": {
+                    "description": "ingredients of recipe",
+                    "type": "array",
+                    "ingredient": {
+                      "description": "ingredient of recipe",
+                      "type": "object",
+                      "properties": {
+                          "aliment": {
+                            "description": "aliment",
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "description": "name of aliment",
+                                "type": "string"
+                              },
+                              "imageLink": {
+                                "description": "link to image",
+                                "type": "string"
+                              },
+                              "required": ["name", "imageLink"]
+                            }
+                          },
+                          "quantity": {
+                            "description": "quantity of ingredient",
+                            "type": "object",
+                            "properties": {
+                              "value": {
+                                "description": "value of quantity",
+                                "type": "number"
+                              },
+                              "unit": {
+                                "description": "unit of quantity",
+                                "type": "string"
+                              }
+                            },
+                            "required": ["value", "unit"]
+                          }
+                      },
+                      "required": ["aliment", "quantity"]
+                    }
+                  },
+                  "difficulty": {
+                    "description": "difficulty of recipe",
+                    "type": "string",
+                    "minLength": 3
+                  },
+                  "serves": {
+                    "description": "number of serves",
+                    "minimum": 1,
+                    "type": "number"
+                  },
+                  "time": {
+                    "description": "time of recipe",
+                    "type": "object",
+                    "properties": {
+                      "prep": {
+                          "description": "preparation of recipe",
+                          "type": "string"
+                      },
+                      "cook": {
+                          "description": "cook of recipe",
+                          "type": "string"
+                      }
+                    },
+                    "required": ["prep", "cook"]
+                  },
+                  "aspects" : {
+                    "description": "aspects of recipe",
+                    "type": "array",
+                    "aspect": {
+                      "description": "aspect of recipe",
+                      "type": "string",
+                      "minLength": 3
+                    }
+                  },
+                  "nutritionalValue": {
+                    "description": "nutritional value of recipe",
+                    "type": "object",
+                    "properties": {
+                      "energieKJ": {
+                        "description": "energie KiloJoule of recipe",
+                        "type": "number"
+                      },
+                      "energieKcal": {
+                        "description": "energie Kilocalerie  of recipe",
+                        "type": "number"
+                      },
+                      "fat": {
+                        "description": "saturated fat of recipe",
+                        "type": "number"
+                      },
+                      "acideAcidulees": {
+                        "description": "acide Acidulees of recipe",
+                        "type": "number"
+                      },
+                      "glucides": {
+                        "description": "glucides of recipe",
+                        "type": "number"
+                      },
+                      "sucres": {
+                        "description": "sugar of recipe",
+                        "type": "number"
+                      },
+                      "fibre": {
+                        "description": "fiber of recipe",
+                        "type": "number"
+                      },
+                      "proteine": {
+                        "description": "protein of recipe",
+                        "type": "number"
+                      },
+                      "sel": {
+                        "description": "sel of recipe",
+                        "type": "number"
+                      }
+                    },
+                    "required": ["energieKJ", "energieKcal", "fat", "acideAcidulees", "glucides", "sucres", "fibre", "proteine", "sel"]
+                  },
+                  "allergens" : {
+                    "description": "allergens of customer",
+                    "type": "array",
+                    "allergen": {
+                      "type": "objet",
+                      "properties": {
+                        "value": {
+                          "description": "name of allergen",
+                          "type": "string"
+                        },
+                        "imageLink" : {
+                          "description": "link to image",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["value", "imageLink"]
+                    }
+                  }
                 },
-                "imageLink": {
-                  "description" : "image link of aliment",
-                  "type": "string",
-                  "minLength": 3
-                }
-              },
-              "quantity": {
-                "type": "object",
-                "value": {
-                  "description": "quantity of aliment",
-                  "type": "number",
-                  "min": 0
-                },
-                "unit": {
-                  "description": "unit of aliment",
-                  "type": "string",
-                  "minLength": 3
-                }
+                "required": ["name", "description", "imageLink", "category", "price", "ingredients", "difficulty", "serves", "time", "aspects", "nutritionalValue", "allergens"]
               }
             },
-            "minAliment": 1,
-            "uniqueItems": true
-          },
-          "difficulty": {
-            "description": "difficult to make recipe",
-            "type": "string",
-            "minLength": 3
-          },
-          "serves": {
-            "description": "number of player",
-            "type": "number",
-            "min": 0
-          },
-          "time": {
-            "type": "object",
-            "prep": {
-              "description": "preparation Order",
-              "type": "number",
-              "min": 0
-            },
-            "cook": {
-              "description": "cook Order",
-              "type": "number",
-              "min": 0
-            }
-          },
-          "aspects": {
-            "type": "array",
-            "aspect" : {
-              "description": "name of recipe Aspect",
-              "type": "string"
-            },
-            "minAliment": 1,
-            "uniqueItems": true
-          },
-          "directions": {
-            "type": "array",
-            "direction" : {
-              "description": "direction",
-              "type": "string"
-            },
-            "minAliment": 1,
-            "uniqueItems": true
-          },
-          "valueNutritional" : {
-            "type": "object",
-            "energieKJ": {
-              "type": "number",
-              "description": "energieKJ to spend"
-            },
-
-            "type": "object",
-            "energieKcal": {
-              "type": "number",
-              "description": "energieKcal to spend"
-            },
-
-            "type": "object",
-            "fat": {
-              "type": "number",
-              "description": "fat if not spend"
-            },
-            "acideAcidulees" : {
-              "type": "number",
-              "description": "Acide acidulées"
-            },
-            "glucide" : {
-              "type": "number",
-              "description": "Glucide"
-            },
-            "sucres" : {
-              "type" : "number",
-              "description" : ""
-            },
-
-            "proteine":   {
-              "type": "number",
-              "description": "protein"
-            },
-
-            "sel" : {
-              "type": "number",
-              "description": "sel"
-            }
+            "required": ["recipe"]
           }
+        },
+        "customer" : {
+          "type": "object",
+          "properties": {
+            "firstname": {
+              "description": "firstname of customer",
+              "type": "string",
+              "minLength": 3
+            },
+            "lastname": {
+              "description": "lastname of customer",
+              "type": "string",
+              "minLength": 3
+            },
+            "mail": {
+              "description": "mail of customer",
+              "type": "string",
+              "minLength": 3
+            },
+            "allergens" : {
+              "description": "allergens of customer",
+              "type": "array",
+              "allergen": {
+                "type": "objet",
+                "properties": {
+                  "value": {
+                    "description": "name of allergen",
+                    "type": "string"
+                  },
+                  "imageLink" : {
+                    "description": "link to image",
+                    "type": "string"
+                  }
+                },
+                "required": ["value", "imageLink"]
+              }
+            }
+          },
+          "required": ["firstname", "lastname", "mail"]
+        },
+        "deliveryman" : {
+          "type": "object",
+          "properties": {
+            "firstname": {
+              "description": "firstname of deliveryman",
+              "type": "string",
+              "minLength": 3
+            },
+            "lastname": {
+              "description": "lastname of deliveryman",
+              "type": "string",
+              "minLength": 3
+            },
+            "mail": {
+              "description": "mail of deliveryman",
+              "type": "string",
+              "minLength": 3
+            },
+            "score": {
+              "description": "score of deliveryman",
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": ["firstname", "lastname", "mail"]
         }
-      }
-    },
-    "minMenus": 1,
-    "uniqueItems": true
-  },
-  "customer" : {
-    "type": "object",
-    "properties": {
-      "firstname": {
-        "description": "firstname of customer",
-        "type": "string",
-        "minLength": 3
       },
-      "lastname": {
-        "description": "lastname of customer",
-        "type": "string",
-        "minLength": 3
-      },
-      "mail": {
-        "description": "mail of customer",
-        "type": "string",
-        "minLength": 3
-      }
-    },
-    "required": ["firstname", "lastname", "mail"]
-  },
-  "deliveryman" : {
-    "type": "object",
-    "properties": {
-      "firstname": {
-        "description": "firstname of deliveryman",
-        "type": "string",
-        "minLength": 3
-      },
-      "lastname": {
-        "description": "lastname of deliveryman",
-        "type": "string",
-        "minLength": 3
-      },
-      "mail": {
-        "description": "mail of deliveryman",
-        "type": "string",
-        "minLength": 3
-      },
-      "score": {
-        "description": "score of deliveryman",
-        "minimum": 0,
-        "type": "number"
-      }
-    },
-    "required": ["firstname", "lastname", "mail"]
+      "required": ["menus", "customer", "deliveryman"]
+    }
   }
 }
