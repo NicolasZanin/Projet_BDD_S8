@@ -82,14 +82,14 @@
             <xs:element name="nutritionalValue">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="energieKJ" type="xs:string"/>
-                        <xs:element name="energieKcal" type="xs:string"/>
-                        <xs:element name="fat" type="xs:string"/>
-                        <xs:element name="acideAcidulees" type="xs:string"/>
-                        <xs:element name="glucides" type="xs:string"/>
-                        <xs:element name="sucres" type="xs:string"/>
-                        <xs:element name="proteine" type="xs:string"/>
-                        <xs:element name="sel" type="xs:string"/>
+                        <xs:element name="energieKJ" type="xs:double"/>
+                        <xs:element name="energieKcal" type="xs:double"/>
+                        <xs:element name="fat" type="xs:double"/>
+                        <xs:element name="acideAcidulees" type="xs:double"/>
+                        <xs:element name="glucides" type="xs:double"/>
+                        <xs:element name="sucres" type="xs:double"/>
+                        <xs:element name="proteine" type="xs:double"/>
+                        <xs:element name="sel" type="xs:double"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
